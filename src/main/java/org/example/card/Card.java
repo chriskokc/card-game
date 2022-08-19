@@ -16,6 +16,14 @@ public class Card {
         this.value = value;
     }
 
+    public String getSuit() {
+        return suit;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + "(suit: " + this.suit + ", symbol: " + this.symbol + ", value: " + this.value + ")";

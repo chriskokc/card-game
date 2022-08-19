@@ -3,9 +3,10 @@ package org.example.card;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CardGame {
-    private final List<String> SUITS = new ArrayList<>(Arrays.asList("\u2660", "\u2665", "\u2666", "\u2663"));
+    private final List<String> SUITS = new ArrayList<>(Arrays.asList(Suits.SPADE.getSymbol(), Suits.HEART.getSymbol(), Suits.CLUB.getSymbol(), Suits.DIAMOND.getSymbol()));
     private final List<String> SYMBOLS = new ArrayList<>(Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"));
     private final List<Integer> VALUE = new ArrayList<>(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14));
     private List<Card> deckOfCards;
@@ -45,12 +46,16 @@ public class CardGame {
         return deckOfCards;
     }
 
-
     public Card dealCard() {
         Card cardDrawn = this.getDeckOfCards().get(this.getTopOfDeck());
         this.topOfDeck += 1;
         return cardDrawn;
     }
+
+    public List<Card> sortDeckInNumberOrder() {
+        return this.getDeckOfCards().stream().sorted((a, b) -> a.getValue() - b.getValue()).collect(Collectors.toList());
+    }
+
 
     public static void main(String[] args) {
         CardGame cardGame = new CardGame();
@@ -60,6 +65,8 @@ public class CardGame {
         for (int i=0; i < deckOfCard.size(); i++) {
             System.out.println(cardGame.dealCard());
         }
+
+        System.out.println(cardGame.sortDeckInNumberOrder());
 
     }
 

@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac799cec-c80e-41ad-9dcd-ddb0da92b144" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/card/Suits.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/card/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/card/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/card/CardGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -79,9 +82,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Suits" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.card.Suits" />
+      <module name="card-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.card.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CardGame" />
+        <item itemvalue="Application.Suits" />
         <item itemvalue="Application.Card" />
         <item itemvalue="Application.Main" />
       </list>
