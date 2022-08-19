@@ -2,11 +2,12 @@ package org.example.card;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CardGame {
-    private final List<String> SUITS = new ArrayList<>(Arrays.asList(Suits.SPADE.getSymbol(), Suits.HEART.getSymbol(), Suits.CLUB.getSymbol(), Suits.DIAMOND.getSymbol()));
+    private final List<Suits> SUITS = new ArrayList<>(Arrays.asList(Suits.SPADE, Suits.HEART, Suits.CLUB, Suits.DIAMOND));
     private final List<String> SYMBOLS = new ArrayList<>(Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"));
     private final List<Integer> VALUE = new ArrayList<>(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14));
     private List<Card> deckOfCards;
@@ -16,7 +17,7 @@ public class CardGame {
         this.deckOfCards = this.createDeckOfCards();
     }
 
-    public List<String> getSUITS() {
+    public List<Suits> getSUITS() {
         return SUITS;
     }
 
@@ -36,9 +37,13 @@ public class CardGame {
         return topOfDeck;
     }
 
+    public void setDeckOfCards(List<Card> deckOfCards) {
+        this.deckOfCards = deckOfCards;
+    }
+
     public List<Card> createDeckOfCards() {
         List<Card> deckOfCards = new ArrayList<>();
-        for (String suit : this.getSUITS()) {
+        for (Suits suit : this.getSUITS()) {
             for (int i=0; i < this.getSYMBOLS().size(); i++) {
                 deckOfCards.add(new Card(suit, this.getSYMBOLS().get(i), this.getVALUE().get(i)));
             }
@@ -56,6 +61,9 @@ public class CardGame {
         return this.getDeckOfCards().stream().sorted((a, b) -> a.getValue() - b.getValue()).collect(Collectors.toList());
     }
 
+    public List<Card> sortDeckIntoSuits() {
+        return this.getDeckOfCards().stream().sorted((a, b) -> a.getSuit().compareTo(b.getSuit())).collect(Collectors.toList());
+    }
 
     public static void main(String[] args) {
         CardGame cardGame = new CardGame();
@@ -65,8 +73,6 @@ public class CardGame {
         for (int i=0; i < deckOfCard.size(); i++) {
             System.out.println(cardGame.dealCard());
         }
-
-        System.out.println(cardGame.sortDeckInNumberOrder());
 
     }
 

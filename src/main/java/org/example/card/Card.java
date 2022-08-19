@@ -6,17 +6,17 @@ import java.util.List;
 
 public class Card {
 
-    private String suit;
+    private Suits suit;
     private String symbol;
     private int value;
 
-    public Card(String suit, String symbol, int value) {
+    public Card(Suits suit, String symbol, int value) {
         this.suit = suit;
         this.symbol = symbol;
         this.value = value;
     }
 
-    public String getSuit() {
+    public Suits getSuit() {
         return suit;
     }
 
@@ -26,6 +26,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(suit: " + this.suit + ", symbol: " + this.symbol + ", value: " + this.value + ")";
+        return this.getClass().getSimpleName() + "(suit: " + this.suit.getSymbol() + ", symbol: " + this.symbol + ", value: " + this.value + ")";
     }
 }
