@@ -10,8 +10,8 @@ public class CardGame {
     private final List<Suits> SUITS = new ArrayList<>(Arrays.asList(Suits.SPADE, Suits.HEART, Suits.CLUB, Suits.DIAMOND));
     private final List<String> SYMBOLS = new ArrayList<>(Arrays.asList("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"));
     private final List<Integer> VALUE = new ArrayList<>(Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14));
-    private List<Card> deckOfCards;
-    private int topOfDeck = 0;
+    protected List<Card> deckOfCards;
+    protected int topOfDeck = 0;
 
     public CardGame() {
         this.deckOfCards = this.createDeckOfCards();
@@ -72,12 +72,5 @@ public class CardGame {
         return this.deckOfCards;
     }
 
-    public static void main(String[] args) {
-        CardGame cardGame = new CardGame();
-
-        System.out.println(cardGame.sortDeckInNumberOrder());
-        System.out.println(cardGame.sortDeckIntoSuits());
-        System.out.println(cardGame.shuffleDeck());
-    }
 
 }

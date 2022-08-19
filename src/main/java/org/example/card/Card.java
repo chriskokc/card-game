@@ -1,9 +1,5 @@
 package org.example.card;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Card {
 
     private Suits suit;
