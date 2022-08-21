@@ -1,8 +1,8 @@
 package org.example;
 
-import org.example.card.Snap;
+import org.example.game.Snap;
 
-public class Main {
+public class Playground {
     public static void main(String[] args) {
 
         Snap snap = new Snap();

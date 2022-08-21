@@ -1,4 +1,4 @@
-package org.example.card;
+package org.example.game;
 
 public class Card {
 
