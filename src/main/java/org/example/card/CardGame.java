@@ -57,19 +57,16 @@ public class CardGame {
         return cardDrawn;
     }
 
-    public List<Card> sortDeckInNumberOrder() {
+    public void sortDeckInNumberOrder() {
         this.setDeckOfCards(this.getDeckOfCards().stream().sorted((a, b) -> a.getValue() - b.getValue()).collect(Collectors.toList()));
-        return this.deckOfCards;
     }
 
-    public List<Card> sortDeckIntoSuits() {
+    public void sortDeckIntoSuits() {
         this.setDeckOfCards(this.getDeckOfCards().stream().sorted((a, b) -> a.getSuit().compareTo(b.getSuit())).collect(Collectors.toList()));
-        return this.deckOfCards;
     }
 
-    public List<Card> shuffleDeck() {
+    public void shuffleDeck() {
         Collections.shuffle(this.deckOfCards);
-        return this.deckOfCards;
     }
 
 
