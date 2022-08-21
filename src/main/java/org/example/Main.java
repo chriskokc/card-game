@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) {
 
         Snap snap = new Snap();
-        System.out.println(snap.createDeckOfCards());
+        snap.playGame();
+
 
     }
 }
