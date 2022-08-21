@@ -1,8 +1,10 @@
 package org.example.game;
 
+import org.example.player.ComputerPlayer;
+import org.example.player.HumanPlayer;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Snap extends CardGame{
 
@@ -23,28 +25,40 @@ public class Snap extends CardGame{
     }
 
     public void playGame() {
-        Scanner scanner = new Scanner(System.in);
+        HumanPlayer user = new HumanPlayer("Tony");
+        ComputerPlayer computer = new ComputerPlayer();
         System.out.println("Do you want to play Snap? Please type Y for YES and N for NO.");
-        String userInput = scanner.nextLine();
         boolean isGameOn = false;
 
-        if (userInput.toLowerCase().equals("y")) {
+        if (user.getResponse().toLowerCase().equals("y")) {
             System.out.println("Let's play Snap!");
             isGameOn = true;
         }
 
         while (isGameOn) {
             System.out.println("Please press ENTER to draw a card.");
-            String userPress = scanner.nextLine();
-            if (userPress != null) {
+            if (user.getResponse() != null) {
                 this.cardsDrawn.add(this.dealCard());
             }
 
-            System.out.println("The card you draw is: " + this.cardsDrawn.get(this.cardsDrawn.size() - 1));
+            System.out.println(user.getName() + " draws: " + this.cardsDrawn.get(this.cardsDrawn.size() - 1));
 
             if (areTwoCardsHavingTheSameSymbol()) {
-                System.out.println("Congratulations you win!");
+                System.out.println("Congratulations! " + user.getName() + ", you win!");
                 isGameOn = false;
+                return;
+            }
+
+            if (computer.getResponse() != null) {
+                this.cardsDrawn.add(this.dealCard());
+            }
+
+            System.out.println(computer.getName() + " draws: " + this.cardsDrawn.get(this.cardsDrawn.size() - 1));
+
+            if (areTwoCardsHavingTheSameSymbol()) {
+                System.out.println(computer.getName() + " win this time:(");
+                isGameOn = false;
+                return;
             }
 
         }
