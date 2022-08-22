@@ -24,3 +24,13 @@
 To allow two players to play Snap, the program has been improved by creating an abstract class `Player`. `HumanPlayer` and `ComputerPlayer` inherit from `Player` and they can have different implementation for the `getResponse()` method. `HumanPlayer` is allowed to press `ENTER` to draw a card in their turn, while `ComputerPlayer` was set to draw card automatically. The winning state is determined when snap occurs in their turn.
 
 <img width="500" alt="twoUsersGamePlay_winningState" src="https://user-images.githubusercontent.com/87203804/185806813-86eaea39-24aa-43af-b816-90c22c83911c.png">
+
+
+### Timer for Snap opportunity
+To make the entire card game more exciting, a timer has been created. When there is a snap opportunity for `HumanPlayer`, they have 2 seconds to submit the word "snap" in order to win. If they do not type it in time, they will miss the chance to win. 
+
+<img width="386" alt="twoUsersGamePlay_timerWinningSnap" src="https://user-images.githubusercontent.com/87203804/185984213-f5ec870e-bc4a-4e4f-ba2a-2cdd6844f6fe.png">
+
+<img width="404" alt="twoUsersGamePlay_timerMissSnap" src="https://user-images.githubusercontent.com/87203804/185984227-daa89b76-44bf-4414-9748-6f274de91ae1.png">
+
+
