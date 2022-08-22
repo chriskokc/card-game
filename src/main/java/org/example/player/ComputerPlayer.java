@@ -1,6 +1,5 @@
 package org.example.player;
 
-import java.util.Scanner;
 
 public class ComputerPlayer extends Player {
 

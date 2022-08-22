@@ -8,6 +8,5 @@ public class Playground {
         Snap snap = new Snap();
         snap.playGame();
 
-
     }
 }

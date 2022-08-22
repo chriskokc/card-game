@@ -7,8 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HumanPlayer extends Player {
 
-    public HumanPlayer(String name) {
-        this.name = name;
+    public HumanPlayer() {
         this.playerInput = new Scanner(System.in);
     }
 

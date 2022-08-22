@@ -11,6 +11,10 @@ public abstract class Player {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Scanner getPlayerInput() {
         return playerInput;
     }
