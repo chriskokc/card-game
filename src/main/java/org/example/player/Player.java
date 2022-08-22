@@ -17,4 +17,6 @@ public abstract class Player {
 
     public abstract String getResponse();
 
+    public abstract void getSnapOpportunity();
+
 }
